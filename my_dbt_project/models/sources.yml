@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: amazon_sales       # Source name, typically the schema name or a logical grouping
+    schema: amazon_sales     # The schema name in SQL Server
+    tables:
+      - name: amazon_sales_report  # Table name
