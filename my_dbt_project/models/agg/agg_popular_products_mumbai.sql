@@ -10,7 +10,7 @@ WITH sales_in_mumbai AS (
     FROM {{ ref('fact_sales') }} f
     JOIN {{ ref('dim_product') }} p ON f.product_key = p.product_key
     JOIN {{ ref('dim_shipping') }} s ON f.shipping_key = s.shipping_key
-    WHERE s.ship_city = 'Mumbai'
+    WHERE s.ship_city = '%Mumbai%'
     GROUP BY p.style, p.category
 )
 
@@ -19,4 +19,4 @@ SELECT
     category,
     total_quantity
 FROM sales_in_mumbai
-ORDER BY total_quantity DESC
+
