@@ -1,0 +1,45 @@
+version: 2
+
+models:
+
+  - name: stg_sales_data
+    description: ""
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+          
+
+  - name: stg_date_dimension
+    columns:
+      - name: date_key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_fulfillment_dimension
+    columns:
+       - name: date_key
+         tests:
+           - not_null
+
+  - name: stg_product_dimension
+    columns:
+       - name: sku
+         tests:
+           - not_null
+
+  - name: stg_promotion_dimension
+    columns:
+        - name: promotion_ids
+          tests:
+           - not_null
+
+  - name: stg_shipping_dimension
+    columns:
+       - name: ship_city
+         tests:
+          - not_null
+
+
